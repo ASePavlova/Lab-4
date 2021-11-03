@@ -1,29 +1,31 @@
+#Лабораторная работа 4
+#Монотонный список
 def is_monotonic(nums):
-    d = len(nums)
-    b = True
-    t = True
-    for i in range (0, d - 1):
+    m = len(nums)
+    n = True
+    u = True
+    for i in range (0, m - 1):
         if nums[i] - nums[i + 1] == 0:
             continue
         elif nums[i] - nums[i + 1] == -1:
-            t = True
+            u = True
             break
         elif nums[i] - nums[i + 1] == 1:
-            t = False
+            u = False
             break
         else:
             return False
 
-    for i in range(0, d - 1):
-        if t:
+    for i in range(0, m - 1):
+        if u:
             if nums[i] - nums[i + 1] <= 0:
                 continue
             else:
-                b = False
+                n = False
         else:
             if nums[i] - nums[i + 1] >= 0:
                 continue
             else:
-                b = False
+                n = False
 
-    return b
+    return n
